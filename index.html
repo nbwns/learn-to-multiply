@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet"/>
+    <link href="./css/main.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container" id="multiply">
+        <div class="tabs">
+            <ul>
+              <li v-for="table in tables" :class="{'is-active': table == selectedTable}">
+                  <a class="is-size-4" @click="select(table)">Table de {{table}}</a>
+                </li>
+            </ul>
+          </div>
+        <div class="is-size-2">
+            <div>
+                <p>
+                    {{random}} x {{selectedTable}} =
+                </p>
+            </div>
+            <form @submit="check()">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" v-model="answer" type="number" placeholder="Réponse">
+                    </div>
+                </div>
+            </form> 
+            <div v-if="success==true" class="alert has-background-success has-text-white" @click="newQuestion()">
+                <p>Bravo ! </p>
+            </div>
+            <div v-if="success==false" class="alert has-background-danger  has-text-white">
+                <p>Essaie encore...</p>
+            </div>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.18/chance.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
