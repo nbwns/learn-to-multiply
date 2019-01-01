@@ -18,14 +18,14 @@
           </div>
         <div class="is-size-2">
             <div>
-                <p>
+                <p class="question">
                     {{random}} x {{selectedTable}} =
                 </p>
             </div>
             <form @submit.stop.prevent="check()">
                 <div class="field">
                     <div class="control">
-                        <input class="input is-large" v-model="answer" type="number" placeholder="Réponse">
+                        <input class="input is-large" ref="answerF" v-model="answer" type="number" placeholder="Réponse">
                     </div>
                 </div>
             </form> 

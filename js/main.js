@@ -15,6 +15,7 @@ new Vue({
             this.success = null;
             this.answer = null;
             this.random = chance.integer({ min: 0, max: this.randomMax });
+            this.$refs.answerF.$el.focus()
         },
         select(table){
             this.selectedTable = table;

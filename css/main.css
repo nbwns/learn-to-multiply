@@ -6,3 +6,7 @@
 .alert.has-background-success{
     cursor: pointer;
 }
+
+.question{
+    padding-left: 5px;
+}
